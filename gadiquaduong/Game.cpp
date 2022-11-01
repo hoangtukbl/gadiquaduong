@@ -12,7 +12,20 @@ Game::Game()
 Game::~Game()
 {
 }
-
+void movevehical(vector<Lane> _lane) {
+	while (true){
+		for (int i = 0; i < _lane.size(); i++) {
+			
+			_lane[i].moveLane();
+		}
+	Sleep(10);
+	}
+}
+void movehuman(People x) {
+	while (true) {
+		x.move();
+	}
+}
 void Game::playGame()
 {
 	drawBoardGame();
@@ -22,14 +35,14 @@ void Game::playGame()
 
 	for (int i = 0; i < _lane.size(); i++)
 	 	_lane[i].printLane();
-	while (true) {
-		// for (int i = 0; i < _lane.size(); i++)
-		// 	_lane[i].moveLane();
-		// Sleep(10);
-		human.move();
-		cout << human.getmX() << human.getmY();
-		
-	}
+
+	thread vehi(movevehical,_lane);
+	thread humanmove(movehuman,human);
+	
+
+	vehi.join();
+	humanmove.join();
+
 }
 
 void Game::initGameData()
