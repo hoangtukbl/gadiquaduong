@@ -94,19 +94,19 @@ void Game::drawBoardGame()
 	putchar(185);
 
 	for (int j = 0; j < boxW; j++) {
-		Common::gotoXY(left + j, top + boxH * _numOfLane + 3);
+		Common::gotoXY(left + j, top + boxH * _numOfLane + 5);
 		putchar(205);
 	}
-	for (int j = 0; j < 3; j++) {
+	for (int j = 0; j < 5; j++) {
 		Common::gotoXY(left, top + boxH * _numOfLane + j);
 		putchar(186);
 		Common::gotoXY(left + boxW, top + boxH * _numOfLane + j);
 		putchar(186);
 	}
 
-	Common::gotoXY(left, top + boxH * _numOfLane + 3);
+	Common::gotoXY(left, top + boxH * _numOfLane + 5);
 	putchar(200);
-	Common::gotoXY(left + boxW, top + boxH * _numOfLane + 3);
+	Common::gotoXY(left + boxW, top + boxH * _numOfLane + 5);
 	putchar(188);
 
 	Common::gotoXY(left, top + boxH * _numOfLane);
