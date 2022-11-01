@@ -6,6 +6,9 @@
 #include <iostream>
 #include <string>
 #include "People.h"
+#include <thread>
+
+#define SO_THREAD
 
 int const LEFT = 0;
 int const RIGHT = 10;
@@ -19,6 +22,7 @@ private:
 public:
 	Game();
 	~Game();
+
 
 	void playGame();
 	void initGameData();
