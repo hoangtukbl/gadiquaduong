@@ -15,8 +15,9 @@ Game::~Game()
 void movevehical(vector<Lane> _lane) {
 	while (true){
 		for (int i = 0; i < _lane.size(); i++) {
-			
+			khoathread.lock();
 			_lane[i].moveLane();
+			khoathread.unlock();
 		}
 	Sleep(10);
 	}
